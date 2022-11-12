@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../../utilities/Button/Button';
 import heroImg from './../../../../assets/images/chair.png'
 import './Hero.css'
 const Hero = () => {
@@ -10,7 +11,7 @@ const Hero = () => {
                     <div className='text-center md:text-left'>
                         <h1 className="text-2xl md:text-5xl font-light">Your New Smile Starts Here</h1>
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn text-white border-0 bg-gradient-to-r from-primary to-secondary">Get Started</button>
+                        <Button>Get Started</Button>
                     </div>
                 </div>
             </div>

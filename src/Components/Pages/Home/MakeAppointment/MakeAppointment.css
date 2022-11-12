@@ -1,0 +1,6 @@
+.bg-app{
+    background-image: url(../../../../assets/images/appointment.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
