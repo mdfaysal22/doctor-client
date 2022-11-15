@@ -20,7 +20,7 @@ const Footer = () => {
     ]
 
     return (
-        <div className='my-10 pt-10 bg-img'>
+        <div className='py-10 pt-10 bg-img'>
             <div className='flex flex-col md:flex-row gap-y-5 text-center md:text-left justify-between '>
                 <div className='flex flex-col'>
                     <h1 className='text-xl font-semibold text-gray-500'>SERVICES</h1>

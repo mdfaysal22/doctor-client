@@ -46,7 +46,7 @@ const Header = () => {
                       {
                           navigation.map((item, idx) => {
                               return (
-                                <li key={idx} className="text-gray-600 transition-all duration-500 text-center hover:text-white rounded-md p-2 hover:bg-gray-600  ">
+                                <li key={idx} className="text-gray-600 transition-all duration-500 text-center hover:text-white dark:text-white rounded-md p-2 hover:bg-gray-600  ">
                                     <Link to={item.path}>
                                         { item.title }
                                     </Link>
