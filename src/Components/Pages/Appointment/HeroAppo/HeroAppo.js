@@ -9,10 +9,11 @@ const HeroAppo = ({selectedDay, setSelectedDay}) => {
     return (
         <div className='bg-hero-image'>
             <div className='flex p-10 justify-center flex-col-reverse md:flex-row items-center gap-10'>
-                <div className="card bg-base-100 shadow-xl">
+                <div className="card dark:bg-gray-800 dark:text-white bg-base-100 shadow-xl">
                     <div className="card-body">
                         <div>
                             <DayPicker
+                                className='dark:text-white dark:bg-gray-800'
                                 mode="single"
                                 selected={selectedDay}
                                 onSelect={setSelectedDay}

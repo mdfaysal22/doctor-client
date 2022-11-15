@@ -16,7 +16,7 @@ const AppointmentModal = ({treatment, selectedDay}) => {
                     <input type="text" placeholder="Full Name" className="input my-3 border-2 border-gray-200 w-full " />
                     <input type="number" placeholder="Phone Number" className="input my-3 border-2 border-gray-200 w-full " />
                     <input type="email" placeholder="Email" className="input my-3 border-2 border-gray-200 w-full " />
-                    <button className='btn block w-full btn-info'>Submit</button>
+                    <button  className='btn block w-full btn-info'>Submit</button>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Toggler from '../../../Utilities/Toggler';
 
 const Header = () => {
     const [state, setState] = useState(false)
@@ -14,14 +15,14 @@ const Header = () => {
       { title: "Login", path: "/login" }
   ]
     return (
-        <nav className="bg-white w-full border-b md:border-0 md:static">
+        <nav className="bg-white text-black dark:text-white  dark:bg-gray-800  w-full border-b md:border-0 md:static">
           <div className="items-center justify-between mx-auto md:flex">
               <div className="flex items-center justify-between py-3 md:py-5 md:block">
                     <Link to="/">
                         <h2 className='text-xl font-semibold'>Doctor Portal</h2>
                     </Link>
-                  <div className="md:hidden">
-                      <button className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
+                  <div className="md:hidden flex justify-center item-center gap-5">
+                      <button className="text-gray-700 dark:text-white dark:focus:border-gray-100  outline-none p-2 rounded-md focus:border-gray-400 focus:border"
                           onClick={() => setState(!state)}
                       >
                           {
@@ -36,7 +37,9 @@ const Header = () => {
                               )
                           }
                       </button>
+                      <Toggler></Toggler>
                   </div>
+                  
               </div>
               <div className={` pb-3 mt-8 md:block md:pb-0 md:mt-0 ${ state ? 'block' : 'hidden'}`}>
                   <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
@@ -51,7 +54,13 @@ const Header = () => {
                               )
                           })
                       }
+                        
+                     
                   </ul>
+                  
+              </div>
+              <div className='hidden md:flex'>
+              <Toggler></Toggler>
               </div>
           </div>
       </nav>
