@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { userContext } from '../../../Contexts/AuthContexts';
 import toast from 'react-hot-toast';
 const Signup = () => {
     const {emailSignup, updateUser, googleSignUp} = useContext(userContext)
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const handleSignup = (data, e) => {
         emailSignup(data.email, data.password)
@@ -12,6 +13,7 @@ const Signup = () => {
             const signedUp = result.user;
             if(signedUp.email){
                 toast('Successfully SignUp!')
+                navigate('/');
             }
             updateUser(data.name)
             .then(()=> {})

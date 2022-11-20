@@ -8,7 +8,10 @@ import Login from "../../Components/User/Login/Login";
 import Signup from "../../Components/User/Signup/Signup";
 import Update from "../../Components/User/Update/Update";
 import User from "../../Components/User/User/User";
+import MyAppo from "../../Dashboard/MyAppo/MyAppo";
+import Dashboard from "../../Layout/Dashboard";
 import Main from "../../Layout/Main";
+import PrivateRouter from "../PrivateRouter/PrivateRouter";
 
 export const router = createBrowserRouter([
     {
@@ -29,7 +32,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:"/appointment",
-                element:<Appointment></Appointment>
+                element:<PrivateRouter><Appointment></Appointment></PrivateRouter>
             },
             {
                 path:'reviews',
@@ -59,5 +62,16 @@ export const router = createBrowserRouter([
 
 
         ]
+    },
+    {
+        path:'/admin',
+        element: <Dashboard></Dashboard>,
+        children:[
+            {
+                path:'/admin',
+                element:<MyAppo></MyAppo>
+            }
+        ]
+
     }
 ])
