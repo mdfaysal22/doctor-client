@@ -11,13 +11,17 @@ const Signup = () => {
         emailSignup(data.email, data.password)
         .then(result => {
             const signedUp = result.user;
+            updateUser(data.name)
+            .then(()=> {
+                saveUser(data.name, data.email)
+            })
+            .catch(()=>{})
             if(signedUp.email){
                 toast('Successfully SignUp!')
+                
                 navigate('/');
             }
-            updateUser(data.name)
-            .then(()=> {})
-            .catch(()=>{})
+            
         })
         .catch(err => {
             const errMessage = err.message;
@@ -43,6 +47,19 @@ const Signup = () => {
                 toast.error(`${errMessage}`);
             }
         })
+    }
+
+    const saveUser = (displayName, email) => {
+        const user = {name: displayName, email};
+        fetch('http://localhost:5000/users', {
+            method:'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json)
+        .then(data => console.log(data));
     }
     return (
         
